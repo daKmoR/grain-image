@@ -1,0 +1,73 @@
+<link rel="import" href="../polymer/polymer-element.html">
+
+<dom-module id="grain-image">
+	<template>
+		<style>
+			:host {
+				width: 100%;
+				height: 100%;
+				display: inline-block;
+				overflow: hidden;
+			}
+			#image {
+				width: var(--grain-image-width, 100%);
+				height: var(--grain-image-height, auto);
+			}
+
+			:host([sizing=contain]) #image {
+				object-fit: contain;
+				font-family: 'object-fit: contain;';
+				height: 100%;
+				width: 100%;
+			}
+
+			:host([sizing=cover]) #image {
+				object-fit: cover;
+				font-family: 'object-fit: cover;';
+				height: 100%;
+				width: 100%;
+			}
+		</style>
+
+		<img id="image"
+				 alt$="[[alt]]"
+				 src$="[[src]]"
+				 srcset$="[[srcset]]"
+				 sizes="[[sizes]]" />
+
+	</template>
+
+	<script>
+
+		class GrainImage extends Polymer.Element {
+
+			static get is() { return 'grain-image' }
+
+			static get properties() {
+				return {
+					src: {
+						type: String,
+						reflectToAttribute: true
+					},
+					srcset: {
+						type: String,
+						reflectToAttribute: true
+					},
+					sizes: {
+						type: String,
+						reflectToAttribute: true,
+						value: 'fill-width'
+					},
+					alt: {
+						type: String,
+						reflectToAttribute: true
+					}
+				};
+			}
+
+		}
+
+		// Register custom element definition using standard platform API
+		customElements.define(GrainImage.is, GrainImage);
+	</script>
+</dom-module>

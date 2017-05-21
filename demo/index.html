@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+	<title>grain-read-more demo</title>
+
+	<script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+
+	<link rel="import" href="../../iron-demo-helpers/demo-pages-shared-styles.html">
+	<link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
+	<link rel="import" href="../grain-image.html">
+
+	<style is="custom-style" include="demo-pages-shared-styles">
+	</style>
+</head>
+<body>
+<div class="vertical-section-container centered">
+	<h3>Basic grain-read-more demo</h3>
+	<demo-snippet>
+		<template>
+			<div style="width: 600px; height: 300px;">
+				<grain-image srcset="1920x1080.jpg 1920w, 640x360.jpg 640w" sizing="cover" sizes="600px"></grain-image>
+			</div>
+		</template>
+	</demo-snippet>
+</div>
+</body>
+</html>
